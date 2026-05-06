@@ -44,7 +44,7 @@ function CasePage() {
           <Reveal className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.2em] text-gold">Services</p>
             <ul className="mt-4 space-y-2">
-              {project.tags.map(t => <li key={t} className="font-display text-xl">{t}</li>)}
+              {project.tags.map((t: string) => <li key={t} className="font-display text-xl">{t}</li>)}
             </ul>
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-8 space-y-6 text-foreground/80 leading-relaxed text-lg">
