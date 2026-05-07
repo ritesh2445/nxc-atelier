@@ -37,39 +37,68 @@ function Home() {
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const yScroll = useTransform(scrollYProgress, [0, 1], [0, 220]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
     <section ref={ref} className="relative h-[110vh] flex items-end overflow-hidden bg-black">
-      <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img
-          src={heroPrism}
-          alt=""
-          className="h-full w-full object-cover"
-          width={1920}
-          height={1280}
+      {/* Animated image layer: continuous slow drift + zoom + scroll parallax */}
+      <motion.div style={{ y: yScroll }} className="absolute inset-0">
+        <motion.div
+          className="absolute inset-[-8%]"
+          animate={{
+            scale: [1.05, 1.15, 1.08, 1.05],
+            x: ["0%", "-2%", "1.5%", "0%"],
+            y: ["0%", "1.5%", "-1%", "0%"],
+            rotate: [0, 1.2, -0.8, 0],
+          }}
+          transition={{ duration: 28, ease: "easeInOut", repeat: Infinity }}
+        >
+          <img
+            src={heroPrism}
+            alt=""
+            className="h-full w-full object-cover"
+            width={1920}
+            height={1280}
+          />
+        </motion.div>
+
+        {/* Color wash that pulses */}
+        <motion.div
+          className="absolute inset-0 mix-blend-overlay"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 30% 40%, rgba(255,90,200,0.35), transparent 60%), radial-gradient(50% 50% at 75% 70%, rgba(255,160,60,0.3), transparent 60%)",
+          }}
+          animate={{ opacity: [0.55, 0.9, 0.6, 0.55] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black" />
+
+        {/* Soft vignette + bottom fade for legibility */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.55)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+
+        {/* Subtle film grain */}
+        <div
+          className="absolute inset-0 opacity-[0.07] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+          }}
+        />
       </motion.div>
 
-      {/* Top label */}
-      <motion.div
-        style={{ opacity }}
-        className="absolute top-28 md:top-32 left-6 md:left-10 text-[11px] tracking-[0.25em] uppercase text-foreground/60"
-      >
+      {/* Top labels */}
+      <motion.div style={{ opacity }} className="absolute top-28 md:top-32 left-6 md:left-10 text-[11px] tracking-[0.25em] uppercase text-foreground/60">
         02479
       </motion.div>
-      <motion.div
-        style={{ opacity }}
-        className="absolute top-28 md:top-32 right-6 md:right-10 text-[11px] tracking-[0.25em] uppercase text-foreground/60"
-      >
+      <motion.div style={{ opacity }} className="absolute top-28 md:top-32 right-6 md:right-10 text-[11px] tracking-[0.25em] uppercase text-foreground/60">
         03569
       </motion.div>
 
-      {/* Headline at bottom-left like estrela */}
-      <div className="relative z-10 px-6 md:px-10 pb-20 md:pb-28 max-w-[1500px]">
+      {/* Headline */}
+      <motion.div style={{ y: textY, opacity }} className="relative z-10 px-6 md:px-10 pb-20 md:pb-28 max-w-[1500px]">
         <StaggerText
           text="A people first"
           className="font-display italic text-[clamp(3rem,11vw,11rem)] leading-[0.9] tracking-tight"
@@ -78,10 +107,10 @@ function Hero() {
           text="digital studio"
           className="font-display italic text-[clamp(3rem,11vw,11rem)] leading-[0.9] tracking-tight"
         />
-      </div>
+      </motion.div>
 
-      {/* Bottom UI row */}
-      <div className="absolute bottom-6 inset-x-0 px-6 md:px-10 flex items-end justify-between text-[11px] uppercase tracking-[0.25em] text-foreground/55">
+      {/* Bottom UI */}
+      <motion.div style={{ opacity }} className="absolute bottom-6 inset-x-0 px-6 md:px-10 flex items-end justify-between text-[11px] uppercase tracking-[0.25em] text-foreground/55">
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2.4 }}>
           ↓ Scroll to discover our world
         </motion.div>
@@ -91,7 +120,7 @@ function Hero() {
           </span>
           Showreel
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }
