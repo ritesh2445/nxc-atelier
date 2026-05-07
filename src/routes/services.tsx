@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { Section, ServiceIcon } from "./index";
+import { Section, ServiceIcon } from "@/components/Section";
 import { services, pricing } from "@/data/site";
 
 export const Route = createFileRoute("/services")({
