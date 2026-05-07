@@ -15,11 +15,16 @@ export const services = [
   { icon: "refresh", title: "Maintenance & Retainers", desc: "An always-on partner for iteration, content drops, experiments and the next phase of growth." },
 ];
 
+import work1 from "@/assets/work-1.jpg";
+import work2 from "@/assets/work-2.jpg";
+import work3 from "@/assets/work-3.jpg";
+import work4 from "@/assets/work-4.jpg";
+
 export const projects = [
-  { slug: "atelier-noir", title: "Atelier Noir", client: "Fashion Editor", category: "Web", year: "2025", tags: ["Web", "Brand"], cover: "linear-gradient(135deg,#1a1410,#2b1a0c)" },
-  { slug: "vertex-studio", title: "Vertex Studio", client: "Music Producer", category: "Branding", year: "2025", tags: ["Brand", "Logo"], cover: "linear-gradient(135deg,#0f1418,#1c2630)" },
-  { slug: "mira-protocol", title: "Mira Protocol", client: "AI Founder", category: "App", year: "2024", tags: ["App", "Web"], cover: "linear-gradient(135deg,#181018,#2a1428)" },
-  { slug: "north-cellar", title: "North Cellar", client: "Wine Curator", category: "Web", year: "2024", tags: ["Web", "Brand"], cover: "linear-gradient(135deg,#16110a,#2a1d10)" },
+  { slug: "atelier-noir", title: "Atelier Noir", client: "Fashion Editor", category: "Web", subtitle: "A digital home for a fashion editor", year: "2025", tags: ["UI Design", "Brand Design"], image: work1, cover: "linear-gradient(135deg,#1a1410,#2b1a0c)" },
+  { slug: "vertex-studio", title: "Vertex Studio", client: "Music Producer", category: "Branding", subtitle: "Identity for a producer with range", year: "2025", tags: ["Brand Design", "Packaging"], image: work2, cover: "linear-gradient(135deg,#0f1418,#1c2630)" },
+  { slug: "mira-protocol", title: "Mira Protocol", client: "AI Founder", category: "App", subtitle: "A calmer interface for an AI tool", year: "2024", tags: ["UX Design", "UI Design"], image: work3, cover: "linear-gradient(135deg,#181018,#2a1428)" },
+  { slug: "north-cellar", title: "North Cellar", client: "Wine Curator", category: "Web", subtitle: "An e-commerce site reimagined", year: "2024", tags: ["UI Design", "UX Design", "Brand"], image: work4, cover: "linear-gradient(135deg,#16110a,#2a1d10)" },
 ];
 
 export const testimonials = [
