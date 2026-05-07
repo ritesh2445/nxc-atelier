@@ -3,40 +3,87 @@ import { nav } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface/40 mt-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
-        <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-2">
-              <span className="inline-flex h-8 w-8 items-center justify-center border border-gold/60 text-gold font-display text-sm">N</span>
-              <span className="font-display text-lg">NXC <span className="text-gold">Badge</span></span>
-            </div>
-            <p className="mt-6 font-display text-3xl md:text-4xl leading-tight max-w-md">Build your presence. Own your internet.</p>
-            <Link to="/contact" className="mt-8 inline-flex items-center gap-2 text-gold border-b border-gold/50 pb-1" data-magnetic>
-              Let's build something →
+    <footer className="relative border-t border-white/10 bg-black overflow-hidden">
+      {/* Giant wordmark backdrop */}
+      <div className="absolute inset-x-0 -bottom-6 md:-bottom-10 pointer-events-none select-none text-center">
+        <p className="font-display italic text-[22vw] leading-[0.85] tracking-tight text-white/[0.04]">
+          NXC Badge
+        </p>
+      </div>
+
+      <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-24 md:pt-32 pb-10">
+        {/* Top: tagline + CTA */}
+        <div className="grid md:grid-cols-12 gap-10 items-end pb-20 md:pb-28 border-b border-white/10">
+          <div className="md:col-span-8">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— Let's collaborate</p>
+            <h3 className="font-display italic text-[clamp(2rem,5vw,4.5rem)] leading-[1] tracking-tight">
+              Build your presence. <br />
+              <span className="text-gold">Own your internet.</span>
+            </h3>
+          </div>
+          <div className="md:col-span-4 md:text-right">
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.25em]"
+              data-magnetic
+            >
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/30 group-hover:bg-white group-hover:text-black transition">
+                →
+              </span>
+              Start a project
             </Link>
           </div>
-          <div className="md:col-span-3">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Sitemap</p>
-            <ul className="space-y-2.5 text-sm">
-              {nav.map(n => <li key={n.to}><Link to={n.to} className="hover:text-gold transition">{n.label}</Link></li>)}
+        </div>
+
+        {/* Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 py-16">
+          <div className="col-span-2 md:col-span-4">
+            <Link to="/" className="flex items-baseline gap-1.5 font-display">
+              <span className="text-xl tracking-tight">NXC Badge</span>
+              <span className="text-[10px] text-foreground/60 align-super">™</span>
+            </Link>
+            <p className="mt-5 text-sm text-foreground/55 leading-relaxed max-w-xs">
+              A people-first digital studio designing brands and websites for creators and personal brands. Led by Ritesh Martawar.
+            </p>
+          </div>
+
+          <div className="md:col-span-2 md:col-start-6">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/40 mb-5">Sitemap</p>
+            <ul className="space-y-3 text-sm font-display italic">
+              {nav.map(n => (
+                <li key={n.to}>
+                  <Link to={n.to} className="hover:text-gold transition">{n.label}</Link>
+                </li>
+              ))}
               <li><Link to="/faq" className="hover:text-gold transition">FAQ</Link></li>
               <li><Link to="/contact" className="hover:text-gold transition">Contact</Link></li>
             </ul>
           </div>
-          <div className="md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Elsewhere</p>
-            <ul className="space-y-2.5 text-sm">
+
+          <div className="md:col-span-2">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/40 mb-5">Elsewhere</p>
+            <ul className="space-y-3 text-sm font-display italic">
+              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gold transition">LinkedIn ↗</a></li>
+              <li><a href="https://x.com" target="_blank" rel="noreferrer" className="hover:text-gold transition">Twitter / X ↗</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-gold transition">Instagram ↗</a></li>
+              <li><a href="https://dribbble.com" target="_blank" rel="noreferrer" className="hover:text-gold transition">Dribbble ↗</a></li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/40 mb-5">Contact</p>
+            <ul className="space-y-3 text-sm font-display italic">
               <li><a href="mailto:hello@nxcbadge.com" className="hover:text-gold transition">hello@nxcbadge.com</a></li>
-              <li><a href="#" className="hover:text-gold transition">LinkedIn ↗</a></li>
-              <li><a href="#" className="hover:text-gold transition">Twitter / X ↗</a></li>
-              <li><a href="#" className="hover:text-gold transition">Instagram ↗</a></li>
+              <li><span className="text-foreground/55">Mumbai, India</span></li>
+              <li><span className="text-foreground/55">+91 · by appointment</span></li>
             </ul>
           </div>
         </div>
-        <div className="mt-16 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} NXC Badge. A studio by Ritesh Martawar.</p>
-          <p>Crafted in India · Built for the world.</p>
+
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.25em] text-foreground/45">
+          <p>© {new Date().getFullYear()} NXC Badge — A studio by Ritesh Martawar</p>
+          <p>Crafted in India · Built for the world</p>
         </div>
       </div>
     </footer>
