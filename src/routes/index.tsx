@@ -5,6 +5,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal, StaggerText } from "@/components/Reveal";
 import { projects, services, testimonials, faqs } from "@/data/site";
 import heroPrism from "@/assets/hero-prism.jpg";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
