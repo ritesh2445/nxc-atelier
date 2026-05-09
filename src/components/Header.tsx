@@ -18,10 +18,18 @@ export function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 pointer-events-none">
       {/* Logo (top-left) */}
-      <div className="absolute top-6 left-6 md:top-8 md:left-10 pointer-events-auto">
-        <Link to="/" className="flex items-baseline gap-1.5 font-display" onClick={() => setOpen(false)}>
-          <span className="text-lg tracking-tight">NXC Badge</span>
-          <span className="text-[10px] text-foreground/60 align-super">™</span>
+      <div className="absolute top-4 left-6 md:top-5 md:left-10 pointer-events-auto">
+        <Link to="/" className="flex items-center gap-3 font-display group" onClick={() => setOpen(false)}>
+          <img
+            src={logo}
+            alt="NXC Badge"
+            className="h-12 w-12 md:h-14 md:w-14 object-contain transition-transform duration-500 group-hover:rotate-[8deg]"
+            style={{ mixBlendMode: "screen" }}
+          />
+          <div className="hidden sm:flex flex-col leading-none">
+            <span className="text-base tracking-[0.18em] font-medium">NXC BADGE</span>
+            <span className="text-[9px] tracking-[0.35em] text-foreground/50 mt-1.5">EST. 2025</span>
+          </div>
         </Link>
       </div>
 
