@@ -5,6 +5,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal, StaggerText } from "@/components/Reveal";
 import { projects, services, testimonials, faqs } from "@/data/site";
 import heroPrism from "@/assets/hero-prism.jpg";
+import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +24,7 @@ function Home() {
     <>
       <Hero />
       <Marquee items={["Website Design", "Brand Identity", "Web Apps", "SEO", "Logo Design", "Strategy", "Motion"]} />
+      <Stats />
       <FeaturedWork />
       <WhoWeAre />
       <WhatWeDo />
@@ -30,6 +32,31 @@ function Home() {
       <FAQ />
       <FinalCTA />
     </>
+  );
+}
+
+/* ----------------- STATS ----------------- */
+function Stats() {
+  const items = [
+    { k: "08+", v: "Years crafting the web" },
+    { k: "60+", v: "Brands & creators shipped" },
+    { k: "100%", v: "Founder-led, never outsourced" },
+    { k: "4wk", v: "Average launch cadence" },
+  ];
+  return (
+    <section className="border-y border-white/10">
+      <div className="mx-auto max-w-[1500px] grid grid-cols-2 md:grid-cols-4">
+        {items.map((it, i) => (
+          <div
+            key={i}
+            className={`px-6 md:px-10 py-12 md:py-16 ${i < 3 ? "md:border-r border-white/10" : ""} ${i < 2 ? "border-b md:border-b-0 border-white/10" : ""} ${i === 1 ? "" : ""} ${i % 2 === 1 ? "" : "border-r border-white/10 md:border-r"}`}
+          >
+            <p className="font-display italic text-5xl md:text-6xl text-gold leading-none">{it.k}</p>
+            <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-foreground/55">{it.v}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -328,8 +355,22 @@ function FAQ() {
 /* ----------------- FINAL CTA ----------------- */
 function FinalCTA() {
   return (
-    <section className="px-6 md:px-10 py-32 md:py-48 border-t border-white/5 text-center">
-      <div className="mx-auto max-w-[1500px]">
+    <section className="relative px-6 md:px-10 py-32 md:py-52 border-t border-white/5 text-center overflow-hidden">
+      {/* Phoenix backdrop */}
+      <motion.img
+        src={logo}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 0.08, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[900px] object-contain"
+        style={{ mixBlendMode: "screen" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
+
+      <div className="relative mx-auto max-w-[1500px]">
         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-10">— Let's collaborate</p>
         <h2 className="font-display italic text-[clamp(2.8rem,9vw,9rem)] leading-[0.92] tracking-tight">
           Have a project <br />
