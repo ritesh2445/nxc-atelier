@@ -355,8 +355,22 @@ function FAQ() {
 /* ----------------- FINAL CTA ----------------- */
 function FinalCTA() {
   return (
-    <section className="px-6 md:px-10 py-32 md:py-48 border-t border-white/5 text-center">
-      <div className="mx-auto max-w-[1500px]">
+    <section className="relative px-6 md:px-10 py-32 md:py-52 border-t border-white/5 text-center overflow-hidden">
+      {/* Phoenix backdrop */}
+      <motion.img
+        src={logo}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 0.08, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[900px] object-contain"
+        style={{ mixBlendMode: "screen" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
+
+      <div className="relative mx-auto max-w-[1500px]">
         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-10">— Let's collaborate</p>
         <h2 className="font-display italic text-[clamp(2.8rem,9vw,9rem)] leading-[0.92] tracking-tight">
           Have a project <br />
