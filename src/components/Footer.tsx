@@ -39,11 +39,19 @@ export function Footer() {
         {/* Columns */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 py-16">
           <div className="col-span-2 md:col-span-4">
-            <Link to="/" className="flex items-baseline gap-1.5 font-display">
-              <span className="text-xl tracking-tight">NXC Badge</span>
-              <span className="text-[10px] text-foreground/60 align-super">™</span>
+            <Link to="/" className="flex items-center gap-3 font-display">
+              <img
+                src={logo}
+                alt="NXC Badge"
+                className="h-14 w-14 object-contain"
+                style={{ mixBlendMode: "screen" }}
+              />
+              <div className="flex flex-col leading-none">
+                <span className="text-base tracking-[0.2em] font-medium">NXC BADGE</span>
+                <span className="text-[9px] tracking-[0.35em] text-foreground/50 mt-1.5">EST. 2025</span>
+              </div>
             </Link>
-            <p className="mt-5 text-sm text-foreground/55 leading-relaxed max-w-xs">
+            <p className="mt-6 text-sm text-foreground/55 leading-relaxed max-w-xs">
               A people-first digital studio designing brands and websites for creators and personal brands. Led by Ritesh Martawar.
             </p>
           </div>
