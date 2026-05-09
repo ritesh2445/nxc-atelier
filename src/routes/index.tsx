@@ -55,12 +55,15 @@ function Hero() {
           }}
           transition={{ duration: 28, ease: "easeInOut", repeat: Infinity }}
         >
-          <img
-            src={heroPrism}
-            alt=""
+          <video
+            src="/hero.mp4"
+            poster={heroPrism}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             className="h-full w-full object-cover"
-            width={1920}
-            height={1280}
           />
         </motion.div>
 
