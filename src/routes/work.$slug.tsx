@@ -17,7 +17,7 @@ export const Route = createFileRoute("/work/$slug")({
     ] : [],
   }),
   errorComponent: ({ error }) => <div className="px-6 py-32 text-center">{error.message}</div>,
-  notFoundComponent: () => <div className="px-6 py-32 text-center font-display text-3xl">Project not found.</div>,
+  notFoundComponent: () => <div className="px-6 py-32 text-center font-display text-xl">Project not found.</div>,
   component: CasePage,
 });
 
@@ -33,7 +33,7 @@ function CasePage() {
         <div className="relative h-full mx-auto max-w-[1400px] px-6 md:px-10 flex items-end pb-16">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">{project.category} · {project.year}</p>
-            <h1 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95]">{project.title}</h1>
+            <h1 className="font-display text-[clamp(2rem,5.5vw,4.5rem)] leading-[0.95]">{project.title}</h1>
             <p className="mt-4 text-foreground/70">For {project.client}</p>
           </div>
         </div>
@@ -49,7 +49,7 @@ function CasePage() {
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-8 space-y-6 text-foreground/80 leading-relaxed text-lg">
             <p className="text-xs uppercase tracking-[0.2em] text-gold">Overview</p>
-            <h2 className="font-display text-3xl md:text-5xl text-foreground leading-tight">{project.client} came to us with a problem most creators eventually have — a presence that no longer matched the work.</h2>
+            <h2 className="font-display text-xl md:text-xl text-foreground leading-tight">{project.client} came to us with a problem most creators eventually have — a presence that no longer matched the work.</h2>
             <p>We rebuilt from first principles. New positioning, a new visual system, a hand-built site that loads in under a second and reads like a small magazine. The brief was simple: feel inevitable.</p>
           </Reveal>
         </div>
@@ -75,12 +75,12 @@ function CasePage() {
               { n: "Top 3", l: "Niche search ranking" },
             ].map(r => (
               <div key={r.l}>
-                <p className="font-display text-6xl text-gold">{r.n}</p>
+                <p className="font-display text-lg text-gold">{r.n}</p>
                 <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">{r.l}</p>
               </div>
             ))}
           </div>
-          <blockquote className="mt-16 border-l-2 border-gold pl-6 max-w-3xl font-display text-2xl leading-snug">
+          <blockquote className="mt-16 border-l-2 border-gold pl-6 max-w-3xl font-display text-lg leading-snug">
             "The site genuinely changed the kind of clients I attract. Worth every rupee."
             <footer className="mt-4 text-sm text-muted-foreground not-italic">— {project.client}</footer>
           </blockquote>
@@ -92,9 +92,9 @@ function CasePage() {
           <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20 flex justify-between items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Next project</p>
-              <p className="font-display text-4xl md:text-6xl group-hover:text-gold transition">{next.title}</p>
+              <p className="font-display text-lg md:text-lg group-hover:text-gold transition">{next.title}</p>
             </div>
-            <span className="font-display text-3xl text-gold">→</span>
+            <span className="font-display text-xl text-gold">→</span>
           </div>
         </Link>
       </section>

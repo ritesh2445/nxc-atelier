@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-10 items-end pb-20 md:pb-28 border-b border-white/10">
           <div className="md:col-span-8">
             <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— Let's collaborate</p>
-            <h3 className="font-display italic text-[clamp(2rem,5vw,4.5rem)] leading-[1] tracking-tight">
+            <h3 className="font-display italic text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1] tracking-tight">
               Build your presence. <br />
               <span className="text-gold">Own your internet.</span>
             </h3>

@@ -32,7 +32,7 @@ function FaqPage() {
           </Reveal>
         ))}
         <Reveal className="mt-24 border border-border bg-surface/40 p-12 text-center">
-          <h2 className="font-display text-3xl md:text-4xl">Still wondering?</h2>
+          <h2 className="font-display text-xl md:text-lg">Still wondering?</h2>
           <Link to="/contact" className="mt-6 inline-flex items-center gap-2 bg-gold px-7 py-3.5 text-primary-foreground" data-magnetic>Ask us directly →</Link>
         </Reveal>
       </section>
@@ -45,7 +45,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-border">
       <button onClick={() => setOpen(o => !o)} className="w-full flex items-center justify-between gap-6 py-6 text-left group" data-magnetic>
-        <span className="font-display text-xl md:text-2xl group-hover:text-gold transition">{q}</span>
+        <span className="font-display text-xl md:text-lg group-hover:text-gold transition">{q}</span>
         <span className={`text-gold text-2xl transition-transform duration-300 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
       <AnimatePresence initial={false}>

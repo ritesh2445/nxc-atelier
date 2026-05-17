@@ -51,7 +51,7 @@ function Stats() {
             key={i}
             className={`px-6 md:px-10 py-12 md:py-16 ${i < 3 ? "md:border-r border-white/10" : ""} ${i < 2 ? "border-b md:border-b-0 border-white/10" : ""} ${i === 1 ? "" : ""} ${i % 2 === 1 ? "" : "border-r border-white/10 md:border-r"}`}
           >
-            <p className="font-display italic text-5xl md:text-6xl text-gold leading-none">{it.k}</p>
+            <p className="font-display italic text-xl md:text-lg text-gold leading-none">{it.k}</p>
             <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-foreground/55">{it.v}</p>
           </div>
         ))}
@@ -131,11 +131,11 @@ function Hero() {
       <motion.div style={{ y: textY, opacity }} className="relative z-10 px-6 md:px-10 pb-20 md:pb-28 max-w-[1500px]">
         <StaggerText
           text="A people first"
-          className="font-display italic text-[clamp(3rem,11vw,11rem)] leading-[0.9] tracking-tight"
+          className="font-display italic text-[clamp(2.25rem,6.5vw,5.25rem)] leading-[0.9] tracking-tight"
         />
         <StaggerText
           text="digital studio"
-          className="font-display italic text-[clamp(3rem,11vw,11rem)] leading-[0.9] tracking-tight"
+          className="font-display italic text-[clamp(2.25rem,6.5vw,5.25rem)] leading-[0.9] tracking-tight"
         />
       </motion.div>
 
@@ -164,7 +164,7 @@ function FeaturedWork() {
           <div className="flex items-end justify-between gap-10 flex-wrap">
             <div className="max-w-2xl">
               <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— Featured Work</p>
-              <h2 className="font-display italic text-[clamp(2.2rem,5vw,4.5rem)] leading-[1] tracking-tight">
+              <h2 className="font-display italic text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1] tracking-tight">
                 Design without compromise.
               </h2>
               <p className="mt-6 text-foreground/60 max-w-md leading-relaxed">
@@ -203,7 +203,7 @@ function FeaturedWork() {
                   <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/40 mb-4">
                     0{i + 1} / {p.year}
                   </p>
-                  <h3 className="font-display italic text-4xl md:text-5xl leading-[1]">{p.title}</h3>
+                  <h3 className="font-display italic text-lg md:text-xl leading-[1]">{p.title}</h3>
                   <p className="mt-4 text-foreground/65 max-w-md md:inline-block">{p.subtitle}</p>
                   <div className={`mt-5 flex flex-wrap gap-2 ${i % 2 ? "md:justify-end" : ""}`}>
                     {p.tags.map(t => (
@@ -231,7 +231,7 @@ function WhoWeAre() {
           <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50">— Who we are</p>
         </div>
         <Reveal className="md:col-span-9">
-          <h2 className="font-display italic text-[clamp(1.8rem,3.6vw,3.5rem)] leading-[1.15] tracking-tight">
+          <h2 className="font-display italic text-[clamp(1.25rem,2.2vw,1.875rem)] leading-[1.15] tracking-tight">
             NXC Badge is a people-first studio that cares as much about your business and your audience as you do.
             We're big on honesty, collaboration and good coffee — the foundations of every great partnership. No
             project is too small for our A-game. Our promise is simple: turn your ideas, big or small, into brands,
@@ -264,7 +264,7 @@ function WhatWeDo() {
             <Reveal key={i} delay={i * 0.05}>
               <div className="grid md:grid-cols-12 gap-6 py-10 md:py-14 group">
                 <div className="md:col-span-1 text-foreground/40 text-sm">{it.n}</div>
-                <h3 className="md:col-span-5 font-display italic text-3xl md:text-5xl leading-[1.05] group-hover:text-gold transition">
+                <h3 className="md:col-span-5 font-display italic text-xl md:text-xl leading-[1.05] group-hover:text-gold transition">
                   {it.title}
                 </h3>
                 <p className="md:col-span-5 md:col-start-8 text-foreground/65 leading-relaxed max-w-lg">
@@ -276,7 +276,7 @@ function WhatWeDo() {
         </div>
 
         <div className="mt-16 flex items-center justify-between flex-wrap gap-6">
-          <p className="font-display italic text-2xl md:text-3xl max-w-xl">
+          <p className="font-display italic text-lg md:text-xl max-w-xl">
             Discover our services and how we shape purpose-driven digital experiences.
           </p>
           <Link to="/services" className="group inline-flex items-center gap-3 text-sm" data-magnetic>
@@ -295,14 +295,14 @@ function Testimonials() {
     <section className="px-6 md:px-10 py-32 md:py-44 border-t border-white/5">
       <div className="mx-auto max-w-[1500px]">
         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— Testimonials</p>
-        <h2 className="font-display italic text-[clamp(2rem,4.5vw,4rem)] leading-[1.05] max-w-3xl">
+        <h2 className="font-display italic text-[clamp(1.375rem,2.8vw,2.25rem)] leading-[1.05] max-w-3xl">
           Some words from our valued clients.
         </h2>
 
         <div className="mt-20 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {testimonials.map((t, i) => (
             <Reveal key={i} delay={i * 0.08} className="bg-background p-10 md:p-12">
-              <p className="font-display italic text-2xl leading-snug text-foreground/90">"{t.quote}"</p>
+              <p className="font-display italic text-lg leading-snug text-foreground/90">"{t.quote}"</p>
               <div className="mt-10">
                 <p className="font-display">{t.author}</p>
                 <p className="text-xs uppercase tracking-[0.2em] text-foreground/50 mt-1">{t.role}</p>
@@ -322,7 +322,7 @@ function FAQ() {
       <div className="mx-auto max-w-[1500px] grid md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— FAQs</p>
-          <h2 className="font-display italic text-4xl md:text-6xl leading-[1.05]">
+          <h2 className="font-display italic text-lg md:text-lg leading-[1.05]">
             Questions, <br />answered.
           </h2>
         </div>
@@ -331,7 +331,7 @@ function FAQ() {
             {faqs.slice(0, 6).map((f, i) => (
               <details key={i} className="group border-b border-white/10 py-6">
                 <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <span className="font-display italic text-xl md:text-2xl pr-6 group-hover:text-gold transition">
+                  <span className="font-display italic text-xl md:text-lg pr-6 group-hover:text-gold transition">
                     {f.q}
                   </span>
                   <span className="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-foreground/60 transition group-open:rotate-45 group-open:bg-gold group-open:text-black group-open:border-gold">
@@ -372,7 +372,7 @@ function FinalCTA() {
 
       <div className="relative mx-auto max-w-[1500px]">
         <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-10">— Let's collaborate</p>
-        <h2 className="font-display italic text-[clamp(2.8rem,9vw,9rem)] leading-[0.92] tracking-tight">
+        <h2 className="font-display italic text-[clamp(2rem,5.5vw,4.5rem)] leading-[0.92] tracking-tight">
           Have a project <br />
           <span className="text-gold">in mind?</span>
         </h2>

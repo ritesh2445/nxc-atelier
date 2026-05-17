@@ -30,7 +30,7 @@ function BlogPage() {
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-gold">
                   <span>Featured</span><span>·</span><span>{featured.category}</span><span>·</span><span>{featured.read}</span>
                 </div>
-                <h2 className="font-display text-3xl md:text-5xl mt-6 group-hover:text-gold transition">{featured.title}</h2>
+                <h2 className="font-display text-xl md:text-xl mt-6 group-hover:text-gold transition">{featured.title}</h2>
                 <p className="mt-5 text-foreground/70 leading-relaxed">{featured.excerpt}</p>
                 <span className="mt-8 inline-flex items-center gap-2 text-gold">Read essay →</span>
               </div>
@@ -47,7 +47,7 @@ function BlogPage() {
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-gold">
                   <span>{p.category}</span><span>·</span><span>{p.read}</span>
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl mt-5 group-hover:text-gold transition leading-tight">{p.title}</h3>
+                <h3 className="font-display text-lg md:text-xl mt-5 group-hover:text-gold transition leading-tight">{p.title}</h3>
                 <p className="mt-4 text-foreground/70 leading-relaxed">{p.excerpt}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm text-gold">Read →</span>
               </Link>

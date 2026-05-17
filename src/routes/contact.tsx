@@ -74,7 +74,7 @@ function ContactPage() {
             <Reveal delay={0.1}>
               <p className="text-xs uppercase tracking-[0.3em] text-gold">Or book directly</p>
               <div className="mt-4 border border-border bg-surface/40 aspect-square flex flex-col items-center justify-center text-center p-8">
-                <p className="font-display text-2xl">Discovery call</p>
+                <p className="font-display text-lg">Discovery call</p>
                 <p className="text-sm text-muted-foreground mt-2">30 minutes · Zoom · Free</p>
                 <a href="#" className="mt-6 border border-gold text-gold px-6 py-2.5 hover:bg-gold hover:text-primary-foreground transition" data-magnetic>Open Calendly →</a>
                 <p className="text-xs text-muted-foreground mt-6">Calendly embed placeholder</p>
