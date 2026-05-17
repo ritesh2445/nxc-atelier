@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="relative border-t border-white/10 bg-black overflow-hidden">
       {/* Giant wordmark backdrop */}
       <div className="absolute inset-x-0 -bottom-6 md:-bottom-10 pointer-events-none select-none text-center">
-        <p className="font-display italic text-[22vw] leading-[0.85] tracking-tight text-white/[0.04]">
+        <p className="font-display italic text-[16vw] leading-[0.85] tracking-tight text-white/[0.035]">
           NXC Badge
         </p>
       </div>

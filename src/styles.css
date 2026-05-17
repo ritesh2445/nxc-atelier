@@ -75,11 +75,19 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
   h1, h2, h3, h4, h5, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-    font-weight: 500;
+    letter-spacing: -0.015em;
+    font-weight: 400;
   }
+
+  p { font-weight: 300; }
 
   ::selection {
     background-color: var(--gold);
