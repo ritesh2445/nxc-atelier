@@ -80,11 +80,11 @@ export function Header() {
           >
             {nav.map((n, i) => (
               <motion.div key={n.to} initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.05 * i }}>
-                <Link to={n.to} onClick={() => setOpen(false)} className="font-display text-5xl md:text-7xl hover:text-gold transition">{n.label}</Link>
+                <Link to={n.to} onClick={() => setOpen(false)} className="font-display text-xl md:text-xl hover:text-gold transition">{n.label}</Link>
               </motion.div>
             ))}
             <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
-              <Link to="/contact" onClick={() => setOpen(false)} className="font-display text-5xl md:text-7xl text-gold">Contact →</Link>
+              <Link to="/contact" onClick={() => setOpen(false)} className="font-display text-xl md:text-xl text-gold">Contact →</Link>
             </motion.div>
           </motion.div>
         )}

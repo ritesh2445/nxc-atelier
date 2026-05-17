@@ -48,7 +48,7 @@ function WorkPage() {
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{p.client}</p>
-                      <h3 className="font-display text-4xl md:text-5xl mt-2">{p.title}</h3>
+                      <h3 className="font-display text-lg md:text-xl mt-2">{p.title}</h3>
                       <div className="mt-4 flex gap-2 opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition duration-500">
                         {p.tags.map(t => <span key={t} className="text-xs px-2.5 py-1 border border-gold/40 text-gold">{t}</span>)}
                       </div>
@@ -62,7 +62,7 @@ function WorkPage() {
       </section>
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 py-32">
         <Reveal>
-          <h2 className="font-display text-4xl md:text-6xl max-w-3xl">Have a project of your own?</h2>
+          <h2 className="font-display text-lg md:text-lg max-w-3xl">Have a project of your own?</h2>
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-gold px-7 py-3.5 text-primary-foreground" data-magnetic>Start a conversation →</Link>
         </Reveal>
       </section>

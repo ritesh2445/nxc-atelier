@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog/$slug")({
     ] : [],
   }),
   errorComponent: ({ error }) => <div className="px-6 py-32 text-center">{error.message}</div>,
-  notFoundComponent: () => <div className="px-6 py-32 text-center font-display text-3xl">Post not found.</div>,
+  notFoundComponent: () => <div className="px-6 py-32 text-center font-display text-xl">Post not found.</div>,
   component: PostPage,
 });
 
@@ -38,7 +38,7 @@ function PostPage() {
           <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-gold mb-6">
             <span>{post.category}</span><span>·</span><span>{post.read} read</span>
           </div>
-          <h1 className="font-display text-[clamp(2.4rem,6vw,5.5rem)] leading-[1] max-w-4xl">{post.title}</h1>
+          <h1 className="font-display text-[clamp(1.75rem,4vw,3.25rem)] leading-[1] max-w-4xl">{post.title}</h1>
           <p className="mt-8 max-w-2xl text-xl text-foreground/70 leading-relaxed">{post.excerpt}</p>
         </Reveal>
 
@@ -52,14 +52,14 @@ function PostPage() {
             </div>
           </aside>
           <div className="md:col-span-9 prose-lg max-w-none space-y-6 text-foreground/85 leading-[1.8] text-lg">
-            <h2 id="intro" className="font-display text-3xl text-foreground">Introduction</h2>
+            <h2 id="intro" className="font-display text-xl text-foreground">Introduction</h2>
             <p>Most creators we meet are accidentally renting their audience. Instagram changes its algorithm, TikTok throttles a niche, YouTube demonetizes overnight — and a year of careful work loses half its value in a weekend.</p>
-            <h2 id="problem" className="font-display text-3xl text-foreground">The problem</h2>
+            <h2 id="problem" className="font-display text-xl text-foreground">The problem</h2>
             <p>The platforms aren't villains. They're businesses optimizing for their own metrics. The mistake is treating them like real estate when they're actually leases — month-to-month, terms set by someone else.</p>
-            <h2 id="approach" className="font-display text-3xl text-foreground">Our approach</h2>
+            <h2 id="approach" className="font-display text-xl text-foreground">Our approach</h2>
             <p>A site you own does three things a platform never will: it captures attention you don't pay for, it converts that attention into something measurable, and it compounds — every essay, every case study, every project adds value that doesn't disappear.</p>
-            <blockquote className="border-l-2 border-gold pl-6 font-display text-2xl text-foreground my-10">"The internet rewards the people who own a place on it."</blockquote>
-            <h2 id="takeaway" className="font-display text-3xl text-foreground">Takeaway</h2>
+            <blockquote className="border-l-2 border-gold pl-6 font-display text-lg text-foreground my-10">"The internet rewards the people who own a place on it."</blockquote>
+            <h2 id="takeaway" className="font-display text-xl text-foreground">Takeaway</h2>
             <p>If you've spent more than two years building an audience and you don't have a home base — a real one, not a Linktree — the next twelve months are the cheapest time to fix that. Start there.</p>
           </div>
         </div>
@@ -79,7 +79,7 @@ function PostPage() {
           {related.map(p => (
             <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group block border border-border p-8 hover:border-gold transition" data-magnetic>
               <p className="text-xs uppercase tracking-[0.2em] text-gold">{p.category}</p>
-              <h3 className="font-display text-2xl mt-4 group-hover:text-gold transition">{p.title}</h3>
+              <h3 className="font-display text-lg mt-4 group-hover:text-gold transition">{p.title}</h3>
             </Link>
           ))}
         </div>
@@ -87,7 +87,7 @@ function PostPage() {
 
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 py-24">
         <Reveal className="border border-border bg-surface/40 p-12 md:p-16 text-center">
-          <h2 className="font-display text-3xl md:text-5xl">Like the way we think? Let's build something.</h2>
+          <h2 className="font-display text-xl md:text-xl">Like the way we think? Let's build something.</h2>
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-gold px-7 py-3.5 text-primary-foreground" data-magnetic>Book a discovery call →</Link>
         </Reveal>
       </section>

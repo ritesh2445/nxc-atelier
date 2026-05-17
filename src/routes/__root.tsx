@@ -18,8 +18,8 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-7xl text-gold">404</h1>
-        <h2 className="mt-4 font-display text-2xl">Page not found</h2>
+        <h1 className="font-display text-xl text-gold">404</h1>
+        <h2 className="mt-4 font-display text-lg">Page not found</h2>
         <p className="mt-3 text-sm text-muted-foreground">This URL doesn't exist in our atelier.</p>
         <Link to="/" className="mt-8 inline-block bg-gold px-5 py-2.5 text-sm text-primary-foreground">Go home</Link>
       </div>
@@ -33,7 +33,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-3xl">Something broke.</h1>
+        <h1 className="font-display text-xl">Something broke.</h1>
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
         <button onClick={() => { router.invalidate(); reset(); }} className="mt-6 bg-gold px-5 py-2.5 text-sm text-primary-foreground">Try again</button>
       </div>

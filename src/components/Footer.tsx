@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="relative border-t border-white/10 bg-black overflow-hidden">
       {/* Giant wordmark backdrop */}
       <div className="absolute inset-x-0 -bottom-6 md:-bottom-10 pointer-events-none select-none text-center">
-        <p className="font-display italic text-[22vw] leading-[0.85] tracking-tight text-white/[0.04]">
+        <p className="font-display italic text-[16vw] leading-[0.85] tracking-tight text-white/[0.035]">
           NXC Badge
         </p>
       </div>
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid md:grid-cols-12 gap-10 items-end pb-20 md:pb-28 border-b border-white/10">
           <div className="md:col-span-8">
             <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-6">— Let's collaborate</p>
-            <h3 className="font-display italic text-[clamp(2rem,5vw,4.5rem)] leading-[1] tracking-tight">
+            <h3 className="font-display italic text-[clamp(1.5rem,3.2vw,2.5rem)] leading-[1] tracking-tight">
               Build your presence. <br />
               <span className="text-gold">Own your internet.</span>
             </h3>

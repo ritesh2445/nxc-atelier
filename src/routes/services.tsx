@@ -24,7 +24,7 @@ function ServicesPage() {
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05} className="bg-background p-10 group hover:bg-surface transition">
               <ServiceIcon name={s.icon} />
-              <h3 className="font-display text-2xl mt-6">{s.title}</h3>
+              <h3 className="font-display text-lg mt-6">{s.title}</h3>
               <p className="mt-3 text-sm text-foreground/60 leading-relaxed">{s.desc}</p>
               <div className="mt-6 h-px w-0 bg-gold transition-all duration-500 group-hover:w-16" />
             </Reveal>
@@ -40,8 +40,8 @@ function ServicesPage() {
             { n: "03", t: "Launch & Grow", d: "Soft launch, hard launch, then optional retainers for content, SEO and the long game." },
           ].map((s, i) => (
             <Reveal key={s.n} delay={i * 0.1} className="border border-border p-10 relative">
-              <span className="absolute top-6 right-6 font-display text-gold text-2xl">{s.n}</span>
-              <h3 className="font-display text-2xl">{s.t}</h3>
+              <span className="absolute top-6 right-6 font-display text-gold text-lg">{s.n}</span>
+              <h3 className="font-display text-lg">{s.t}</h3>
               <div className="hairline my-5 w-10" />
               <p className="text-foreground/70 leading-relaxed">{s.d}</p>
             </Reveal>
@@ -54,9 +54,9 @@ function ServicesPage() {
           {pricing.map((p, i) => (
             <Reveal key={p.tier} delay={i * 0.05} className="bg-background p-8">
               <p className="text-xs uppercase tracking-[0.2em] text-gold">{p.tier}</p>
-              <h3 className="font-display text-2xl mt-3">{p.scope}</h3>
+              <h3 className="font-display text-lg mt-3">{p.scope}</h3>
               <div className="hairline my-6 w-10" />
-              <p className="font-display text-3xl">{p.price}</p>
+              <p className="font-display text-xl">{p.price}</p>
             </Reveal>
           ))}
         </div>
@@ -75,7 +75,7 @@ export function PageHero({ eyebrow, title, sub }: { eyebrow: string; title: stri
         <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6 flex items-center gap-3">
           <span className="inline-block h-px w-10 bg-gold" /> {eyebrow}
         </p>
-        <h1 className="font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[0.98] max-w-5xl tracking-tight">{title}</h1>
+        <h1 className="font-display text-[clamp(1.875rem,4.5vw,3.75rem)] leading-[0.98] max-w-5xl tracking-tight">{title}</h1>
         {sub && <p className="mt-8 max-w-2xl text-lg text-foreground/70 leading-relaxed">{sub}</p>}
       </Reveal>
     </section>

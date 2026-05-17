@@ -9,7 +9,7 @@ export function Section({ eyebrow, title, right, children }: { eyebrow?: string;
           <div className="flex items-end justify-between flex-wrap gap-6">
             <div>
               {eyebrow && <p className="text-[11px] uppercase tracking-[0.3em] text-foreground/50 mb-5">— {eyebrow}</p>}
-              {title && <h2 className="font-display italic text-4xl md:text-6xl max-w-3xl leading-[1.05]">{title}</h2>}
+              {title && <h2 className="font-display italic text-lg md:text-lg max-w-3xl leading-[1.05]">{title}</h2>}
             </div>
             {right}
           </div>
